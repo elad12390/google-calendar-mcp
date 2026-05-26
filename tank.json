@@ -1,0 +1,46 @@
+{
+  "name": "@elad12390/google-calendar-mcp",
+  "version": "2.2.1",
+  "description": "MCP server for Google Calendar. Multi-account, cross-calendar conflicts, event CRUD, recurring events, free/busy queries, smart scheduling, image/PDF event import. Triggers: google calendar, schedule meeting, find free time, recurring event, calendar conflicts, import event.",
+  "permissions": {
+    "network": {
+      "outbound": [
+        "*"
+      ]
+    },
+    "filesystem": {
+      "read": [
+        "**/*"
+      ],
+      "write": []
+    },
+    "subprocess": false
+  },
+  "repository": "https://github.com/elad12390/google-calendar-mcp",
+  "publish": {
+    "files": [
+      "build/**",
+      "package.json",
+      "package-lock.json",
+      "SKILL.md",
+      "tank.json",
+      "README.md",
+      "LICENSE",
+      "gcp-oauth.keys.example.json"
+    ]
+  },
+  "atoms": [
+    {
+      "kind": "tool",
+      "name": "google-calendar-mcp",
+      "mcp": {
+        "runtime": "node",
+        "entry": "build/index.js"
+      }
+    },
+    {
+      "kind": "instruction",
+      "content": "./SKILL.md"
+    }
+  ]
+}
